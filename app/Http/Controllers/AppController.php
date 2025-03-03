@@ -35,4 +35,10 @@ class AppController extends Controller
         $jogo->update($request->all());
         return redirect()->route('jogos.index');
     }
+
+    public function destroy(Jogo $jogo)
+    {
+        $jogo->delete();
+        return redirect()->route('jogos.index');
+    }
 }

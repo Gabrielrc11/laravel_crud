@@ -13,6 +13,7 @@ Route::prefix('jogos')->group(function () {
     Route::post('/', [AppController::class, 'store'])->name('jogos.store');
     Route::get('/{jogo}/edit', [AppController::class, 'edit'])->name('jogos.edit');
     Route::put('/{jogo}', [AppController::class, 'update'])->name('jogos.update');
+    Route::delete('/{jogo}', [AppController::class, 'destroy'])->name('jogos.destroy');
 });
 
 Route::fallback(function () {

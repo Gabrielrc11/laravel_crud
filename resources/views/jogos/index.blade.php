@@ -24,7 +24,11 @@
                 <td>{{ $jogo->categoria }}</td>
                 <td>
                     <a href="{{ route('jogos.edit', $jogo->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                    <button class="btn btn-danger btn-sm">Excluir</button>
+                    <form action="{{ route('jogos.destroy', $jogo->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este jogo?')">Excluir</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
