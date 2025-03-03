@@ -23,7 +23,7 @@
                 <td>{{ $jogo->nome }}</td>
                 <td>{{ $jogo->categoria }}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
+                    <a href="{{ route('jogos.edit', $jogo->id) }}" class="btn btn-primary btn-sm">Editar</a>
                     <button class="btn btn-danger btn-sm">Excluir</button>
                 </td>
             </tr>

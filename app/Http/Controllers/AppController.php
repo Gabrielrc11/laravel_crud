@@ -21,7 +21,18 @@ class AppController extends Controller
 
     public function store(Request $request)
     {
-        jogo::create($request->all());
+        Jogo::create($request->all());
+        return redirect()->route('jogos.index');
+    }
+
+    public function edit(Jogo $jogo)
+    {
+        return view('jogos.edit', ['jogo' => $jogo]);
+    }
+
+    public function update(Request $request, Jogo $jogo)
+    {
+        $jogo->update($request->all());
         return redirect()->route('jogos.index');
     }
 }
